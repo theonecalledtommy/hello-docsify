@@ -1,6 +1,9 @@
 name: docs
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   bump:
@@ -9,4 +12,5 @@ jobs:
     - uses: actions/checkout@master
     - uses: tool3/docsify-action@master
       with:
+        branch: main
         github_token: ${{ secrets.GP_TOKEN }}
